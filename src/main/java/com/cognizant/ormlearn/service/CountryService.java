@@ -24,6 +24,13 @@ public class CountryService {
 	}
 
 	@Transactional
+	public List<Country> findCountry(String text) {
+		//day 2 handson 1
+		return countryRepository.findByCountryWith(text);
+
+	}
+
+	@Transactional
 	public Country findCountryByCode(String countryCode) throws CountryNotFoundException {
 		Optional<Country> result = countryRepository.findById(countryCode);
 		if (!result.isPresent()) {
@@ -46,10 +53,11 @@ public class CountryService {
 		countryRepository.save(country);
 
 	}
-	
+
 	@Transactional
-	public void deleteCountry(String code){
+	public void deleteCountry(String code) {
 		Country country = (Country) countryRepository.findById(code).get();
 		countryRepository.delete(country);
 	}
+
 }

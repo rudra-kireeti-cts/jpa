@@ -12,7 +12,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Entity
+//day 2 handson 1 we need mention the name of the entity for the query
+@Entity(name = "country")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -30,5 +31,5 @@ public class Country {
 	// getters and setters
 
 	// toString()
-	
+
 }

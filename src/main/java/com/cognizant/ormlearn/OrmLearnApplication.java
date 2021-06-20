@@ -61,6 +61,7 @@ public class OrmLearnApplication {
 		LOGGER.info("End handson 8 of day 1 - session 1 and 2");
 
 	}
+
 	private static void deleteCountryTest(String code) {
 
 		LOGGER.info("Start handson 9 of day 1 - session 1 and 2");
@@ -69,6 +70,17 @@ public class OrmLearnApplication {
 
 		LOGGER.info("End handson 9 of day 1 - session 1 and 2");
 
+	}
+	
+	//day 2 handson
+	private static void findCountryTest(String text) {
+		LOGGER.info("Start handson 1 of day 2 - session 1");
+
+		List<Country> country = (List<Country>) countryService.findCountry(text);
+
+		LOGGER.debug("Country:{}", country);
+
+		LOGGER.info("End handson 1 of day 2 - session 1");
 	}
 
 	public static void main(String[] args) throws CountryNotFoundException {
@@ -80,8 +92,9 @@ public class OrmLearnApplication {
 		getAllCountriesTest("IN");
 		testAddCountry();
 		getAllCountriesTest("cs");
-		updateCountryTest("cs","cognizant pro");
+		updateCountryTest("cs", "cognizant pro");
 		deleteCountryTest("cs");
+		findCountryTest("ou");
 
 	}
 
